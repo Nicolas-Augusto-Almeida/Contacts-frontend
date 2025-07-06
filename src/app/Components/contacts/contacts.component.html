@@ -2,52 +2,97 @@
     <img src="person-fill-add.svg" alt="Bootstrap" width="64" height="64">
     <h1>Novo Contato</h1>
 </div>
-<div class="container-md bg-dark p-4">
-    <form>
-        <div class="row align-items-start mb-4">
-            <div class="col">
-                <input type="text" class="form-control">
-            </div>
-            <div class="col">
-                <input type="text" class="form-control">
-            </div>
-        </div>
-        <div class="row align-items-start mb-4">
-            <div class="col">
-                <input type="text" class="form-control">
-            </div>
-            <div class="col">
-                <input type="text" class="form-control">
-            </div>
-        </div>
-        <div class="row align-items-start mb-4">
-            <div class="col">
-                <input type="text" class="form-control">
-            </div>
-            <div class="col">
-                <input type="text" class="form-control">
-            </div>
-        </div>
-        <div class="row align-items-start mb-4">
-            <div class="col">
-                <input type="text" class="form-control">
-            </div>
-            <div class="col">
-                <input type="text" class="form-control">
-            </div>
-        </div>
-        <div class="row align-items-start mb-4">
-            <div class="col-4">
-                <input type="text" class="form-control">
-            </div>
-            <div class="col-4">
-                <div class="form-check m-2">
-                    <input class="form-check-input" type="checkbox" value="" id="checkDefault">
-                    <label class="form-check-label text-white" for="checkDefault">
-                        Favorito
-                    </label>
+<div class="container-md p-4">
+    <div class="border rounded p-5 shadow-sm bg-white">
+        <form>
+            <div class="row align-items-start mb-4">
+                <div class="col">
+                    <div class="d-flex align-items-center mb-1">
+                        <img src="person-circle.svg" alt="" width="32" height="32" class="me-2">
+                        <input type="text" class="form-control" id="inputName" placeholder="Nome">
+                    </div>
+                    <small class="text-danger ms-5">*Obrigatório</small>
+                </div>
+
+                <div class="col">
+                    <div class="d-flex align-items-center">
+                        <img src="envelope-open-fill.svg" alt="" width="32" height="32" class="me-2">
+                        <input type="text" class="form-control" id="inputEmail" placeholder="E-mail">
+                    </div>
                 </div>
             </div>
-        </div>
-    </form>
+            <div class="row align-items-start mb-4">
+                <div class="col">
+                    <div class="d-flex align-items-center">
+                        <img src="phone-fill.svg" alt="" width="32" height="32" class="me-2">
+                        <input type="text" class="form-control" id="inputPhone" placeholder="Telefone">
+                    </div>
+                    <small class="text-danger ms-5">*Obrigatório</small>
+                </div>
+                <div class="col">
+                    <div class="d-flex align-items-center">
+                        <img src="house-fill.svg" alt="" width="32" height="32" class="me-2">
+                        <input type="text" class="form-control" id="inputAddress" placeholder="Endereço">
+                    </div>
+                </div>
+            </div>
+            <div class="row align-items-start mb-4">
+                <div class="col">
+                    <div class="d-flex align-items-center">
+                        <img src="cake2-fill.svg" alt="" width="32" height="32" class="me-2">
+                        <input type="text" class="form-control" id="inputBirthdate" placeholder="Data de Nascimento">
+                    </div>
+                </div>
+                <div class="col mb-4">
+                    <div class="d-flex align-items-center">
+                        <img src="buildings-fill.svg" alt="" width="32" height="32" class="me-2">
+                        <input type="text" class="form-control" id="inputCompany" placeholder="Empresa">
+                    </div>
+                </div>
+            </div>
+            <div class="row align-items-start mb-4">
+                <div class="col">
+                    <div class="d-flex align-items-center">
+                        <img src="briefcase-fill.svg" alt="" width="32" height="32" class="me-2">
+                        <input type="text" class="form-control" id="inputTitle" placeholder="Cargo">
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="d-flex align-items-center">
+                        <img src="tags-fill.svg" alt="" width="32" height="32" class="me-2">
+                        <select class="form-select" aria-label="Default select example">
+                            <option selected>Categorias</option>
+                            <option value="1">PROFISSIONAL</option>
+                            <option value="2">FAMILIAR</option>
+                            <option value="3">EMERGENCIA</option>
+                            <option value="4">ESCOLA</option>
+                            <option value="5">AMIGO</option>
+                            <option value="6">OUTROS</option>
+                        </select>
+                    </div>
+                    <small class="text-danger ms-5">*Obrigatório</small>
+                </div>
+            </div>
+            <div class="row align-items-start mb-4">
+                <div class="col-6">
+                    <div class="d-flex align-items-center">
+                        <img src="star-fill.svg" alt="" width="32" height="32" class="me-2">
+                        <div class="form-check ms-2 mt-2">
+                            <input class="form-check-input" type="checkbox" value="" id="checkDefault">
+                            <label class="form-check-label" for="checkDefault">Favorito</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row align-items-start mb-4">
+                <div class="col-6">
+                    <div class="d-flex align-items-center">
+                        <button type="submit" class="btn btn-primary me-2">Salvar</button>
+                        <button type="reset" class="btn btn-secondary me-2">Limpar</button>
+                        <button type="button" class="btn btn-danger">Cancelar</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
 </div>
