@@ -8,6 +8,7 @@ import { FooterComponent } from './Components/footer/footer.component';
 import { NavbarComponent } from './Components/navbar/navbar.component';
 import { provideHttpClient } from '@angular/common/http';
 import { ContactsComponent } from './Components/contacts/contacts.component';
+import { ListComponent } from './Components/list/list.component';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import { ContactsComponent } from './Components/contacts/contacts.component';
     FooterComponent,
     NavbarComponent,
     ContactsComponent,
+    ListComponent,
   ],
   imports: [
     BrowserModule,

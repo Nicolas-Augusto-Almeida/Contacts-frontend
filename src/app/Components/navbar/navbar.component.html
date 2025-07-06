@@ -1,21 +1,18 @@
 <nav class="navbar navbar-expand-lg bg-dark">
 	<div class="container-fluid">
-		<a class="navbar-brand text-white">
-           Fatec&#64;Itu
-        </a>
-
+		<a class="navbar-brand text-white">Uentizap</a>
 		<button class="navbar-toggler" type="button" (click)="isMenuCollapsed = !isMenuCollapsed">&#9776;</button>
-
 		<div [ngbCollapse]="isMenuCollapsed" class="collapse navbar-collapse">
 			<ul class="navbar-nav">
 				<li class="nav-item active">
-					<a class="nav-link text-white"(click)="isMenuCollapsed = true">Contatos</a>
+					<div class="d-flex align-items-center">
+						<a class="nav-link text-white" aria-current="page" routerLink="/contacts" (click)="isMenuCollapsed = true">Contatos</a>
+					</div>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link text-white"  (click)="isMenuCollapsed = true">
-                         <i class="bi bi-star-fill"></i>
-                         Favoritos
-                    </a>
+					<div class="d-flex align-items-center">
+						<a class="nav-link text-warning" (click)="isMenuCollapsed = true">Favoritos</a>
+					</div>
 				</li>
 			</ul>
 		</div>
