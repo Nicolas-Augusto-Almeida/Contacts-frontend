@@ -4,12 +4,12 @@ import { category } from './category';
 
     id: number;
     name: string;
-    email: string;
+    email?: string;
     phone: string;
-    address: string;
-    birthday: string;
-    company: string;
-    title: string;
-    favorite: boolean;
+    address?: string;
+    birthday?: string;
+    company?: string;
+    title?: string;
+    favorite?: boolean;
     category: category;
  }

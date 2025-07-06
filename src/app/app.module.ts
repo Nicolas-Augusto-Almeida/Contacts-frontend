@@ -9,6 +9,8 @@ import { NavbarComponent } from './Components/navbar/navbar.component';
 import { provideHttpClient } from '@angular/common/http';
 import { ContactsComponent } from './Components/contacts/contacts.component';
 import { ListComponent } from './Components/list/list.component';
+import { ReactiveFormsModule } from '@angular/forms';
+
 
 @NgModule({
   declarations: [
@@ -21,7 +23,8 @@ import { ListComponent } from './Components/list/list.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgbModule
+    NgbModule,
+    ReactiveFormsModule
   ],
   providers: [
     provideHttpClient()
