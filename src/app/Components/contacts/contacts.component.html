@@ -4,12 +4,12 @@
 </div>
 <div class="container-md p-4">
     <div class="border rounded p-5 shadow-sm bg-white">
-        <form>
+        <form [formGroup]="formGroupContact">
             <div class="row align-items-start mb-4">
                 <div class="col">
                     <div class="d-flex align-items-center mb-1">
                         <img src="person-circle.svg" alt="" width="32" height="32" class="me-2">
-                        <input type="text" class="form-control" id="inputName" placeholder="Nome">
+                        <input formControlName="name" type="text" class="form-control" id="inputName" placeholder="Nome">
                     </div>
                     <small class="text-danger ms-5">*Obrigatório</small>
                 </div>
@@ -17,7 +17,7 @@
                 <div class="col">
                     <div class="d-flex align-items-center">
                         <img src="envelope-open-fill.svg" alt="" width="32" height="32" class="me-2">
-                        <input type="text" class="form-control" id="inputEmail" placeholder="E-mail">
+                        <input formControlName="email" type="text" class="form-control" id="inputEmail" placeholder="E-mail">
                     </div>
                 </div>
             </div>
@@ -25,14 +25,14 @@
                 <div class="col">
                     <div class="d-flex align-items-center">
                         <img src="phone-fill.svg" alt="" width="32" height="32" class="me-2">
-                        <input type="text" class="form-control" id="inputPhone" placeholder="Telefone">
+                        <input formControlName="phone" type="text" class="form-control" id="inputPhone" placeholder="Telefone">
                     </div>
                     <small class="text-danger ms-5">*Obrigatório</small>
                 </div>
                 <div class="col">
                     <div class="d-flex align-items-center">
                         <img src="house-fill.svg" alt="" width="32" height="32" class="me-2">
-                        <input type="text" class="form-control" id="inputAddress" placeholder="Endereço">
+                        <input formControlName="address" type="text" class="form-control" id="inputAddress" placeholder="Endereço">
                     </div>
                 </div>
             </div>
@@ -40,13 +40,13 @@
                 <div class="col">
                     <div class="d-flex align-items-center">
                         <img src="cake2-fill.svg" alt="" width="32" height="32" class="me-2">
-                        <input type="text" class="form-control" id="inputBirthdate" placeholder="Aniversário (dd/mm/aaaa)">
+                        <input formControlName="birthday" type="text" class="form-control" id="inputBirthdate" placeholder="Data de nascimento dd/mm/yyyy">
                     </div>
                 </div>
                 <div class="col mb-4">
                     <div class="d-flex align-items-center">
                         <img src="buildings-fill.svg" alt="" width="32" height="32" class="me-2">
-                        <input type="text" class="form-control" id="inputCompany" placeholder="Empresa">
+                        <input formControlName="company" type="text" class="form-control" id="inputCompany" placeholder="Empresa">
                     </div>
                 </div>
             </div>
@@ -54,20 +54,20 @@
                 <div class="col">
                     <div class="d-flex align-items-center">
                         <img src="briefcase-fill.svg" alt="" width="32" height="32" class="me-2">
-                        <input type="text" class="form-control" id="inputTitle" placeholder="Cargo">
+                        <input formControlName="title" type="text" class="form-control" id="inputTitle" placeholder="Cargo">
                     </div>
                 </div>
                 <div class="col">
                     <div class="d-flex align-items-center">
                         <img src="tags-fill.svg" alt="" width="32" height="32" class="me-2">
-                        <select class="form-select" aria-label="Default select example">
+                        <select formControlName="category" class="form-select" aria-label="Default select example">
                             <option selected>Categorias</option>
-                            <option value="1">PROFISSIONAL</option>
-                            <option value="2">FAMILIAR</option>
-                            <option value="3">EMERGENCIA</option>
-                            <option value="4">ESCOLA</option>
-                            <option value="5">AMIGO</option>
-                            <option value="6">OUTROS</option>
+                            <option value="PROFISSIONAL">PROFISSIONAL</option>
+                            <option value="FAMILIAR">FAMILIAR</option>
+                            <option value="EMERGENCIA">EMERGENCIA</option>
+                            <option value="ESCOLA">ESCOLA</option>
+                            <option value="AMIGO">AMIGO</option>
+                            <option value="OUTROS">OUTROS</option>
                         </select>
                     </div>
                     <small class="text-danger ms-5">*Obrigatório</small>
@@ -78,7 +78,7 @@
                     <div class="d-flex align-items-center">
                         <img src="star-fill.svg" alt="" width="32" height="32" class="me-2">
                         <div class="form-check ms-2 mt-2">
-                            <input class="form-check-input" type="checkbox" value="" id="checkDefault">
+                            <input class="form-check-input" type="checkbox" value="" id="checkDefault" formControlName="favorite">
                             <label class="form-check-label" for="checkDefault">Favorito</label>
                         </div>
                     </div>
@@ -87,9 +87,8 @@
             <div class="row align-items-start mb-4">
                 <div class="col-6">
                     <div class="d-flex align-items-center">
-                        <button type="submit" class="btn btn-primary me-2">Salvar</button>
-                        <button type="reset" class="btn btn-secondary me-2">Limpar</button>
-                        <button type="button" class="btn btn-danger">Cancelar</button>
+                        <button type="submit" class="btn btn-primary me-2" (click)="save()">Salvar</button>
+                        <button type="reset" class="btn btn-secondary me-2" (click)="clear()">Limpar</button>
                     </div>
                 </div>
             </div>

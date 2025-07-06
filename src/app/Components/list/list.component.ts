@@ -36,7 +36,7 @@ export class ListComponent {
 
   getContacts(){
     this.service.getContacts().subscribe({
-      next: (json: any) => this.contacts = json as Contact[]
+      next: json => this.contacts = json
     });
   }
 

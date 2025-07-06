@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder } from '@angular/forms';
+import { ContactsService } from '../../Services/contacts.service';
+import { Contact } from '../../contact';
 
 @Component({
   selector: 'app-contacts',
@@ -7,11 +9,14 @@ import { FormGroup, FormBuilder } from '@angular/forms';
   templateUrl: './contacts.component.html',
   styleUrl: './contacts.component.css'
 })
-export class ContactsComponent{
- 
+export class ContactsComponent {
+  
+  contacts: Contact[]= [];
   formGroupContact: FormGroup;
 
-  constructor(private formBuilder: FormBuilder) {
+  constructor(private formBuilder: FormBuilder,
+              private service: ContactsService
+  ) {
     this.formGroupContact = this.formBuilder.group({
       id: [''],
       name: [''],
@@ -24,5 +29,20 @@ export class ContactsComponent{
       favorite: [false],
       category: ['']
     });
+  }
+
+  save() {
+    this.service.saveContact(this.formGroupContact.value).subscribe(
+      {
+        next: json => {
+          this.contacts.push(json);
+          this.formGroupContact.reset();
+        }
+      }
+    );
+  }
+
+  clear(){
+    this.formGroupContact.reset();
   }
 }
