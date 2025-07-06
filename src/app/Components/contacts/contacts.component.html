@@ -40,7 +40,7 @@
                 <div class="col">
                     <div class="d-flex align-items-center">
                         <img src="cake2-fill.svg" alt="" width="32" height="32" class="me-2">
-                        <input formControlName="birthday" type="text" class="form-control" id="inputBirthdate" placeholder="Data de nascimento dd/mm/yyyy">
+                        <input formControlName="birthday" type="date" class="form-control" id="inputBirthdate" placeholder="Data de nascimento dd/mm/yyyy">
                     </div>
                 </div>
                 <div class="col mb-4">
@@ -87,7 +87,7 @@
             <div class="row align-items-start mb-4">
                 <div class="col-6">
                     <div class="d-flex align-items-center">
-                        <button type="submit" class="btn btn-primary me-2" (click)="save()">Salvar</button>
+                        <button type="submit" class="btn btn-primary me-2" routerLink="/contacts" (click)="save()">Salvar</button>
                         <button type="reset" class="btn btn-secondary me-2" (click)="clear()">Limpar</button>
                     </div>
                 </div>

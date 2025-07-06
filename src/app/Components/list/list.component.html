@@ -39,6 +39,7 @@
                         'dd/MM/yyyy') : '-' }}<br />
                         <strong>Cargo:</strong> {{ contact.title || '-' }}<br />
                         <button class="btn btn-danger mt-2" (click)="delete(contact)">Excluir</button>
+                        <button class="btn btn-secondary mt-2 ms-2" routerLink="/newContact">Editar</button>
                     </p>
                 </div>
             </div>
