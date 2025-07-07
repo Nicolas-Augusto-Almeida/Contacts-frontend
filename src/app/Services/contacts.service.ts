@@ -9,12 +9,12 @@ import { Observable } from 'rxjs';
 export class ContactsService {
 
 
-  apiUrl = 'http://localhost:8080/contacts';
+  apiUrl = 'https://nicolasaugusto.duckdns.org/contacts';
 
   constructor(private http: HttpClient) { }
 
   getCategories(): Observable<string[]> {
-  return this.http.get<string[]>('http://localhost:8080/categories');
+  return this.http.get<string[]>('https://nicolasaugusto.duckdns.org/categories');
 }
 
   getContacts(): Observable<Contact[]> {
