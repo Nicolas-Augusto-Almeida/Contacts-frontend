@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Contact } from '../../contact';
-import { FormBuilder, FormGroup } from '@angular/forms';
 import { ContactsService } from '../../Services/contacts.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-list',
@@ -16,7 +16,8 @@ export class ListComponent {
   selectedCategory: string = '';
   searchTerm: string = '';
 
-  constructor(private service: ContactsService
+  constructor(private service: ContactsService,
+              private route: ActivatedRoute
   ) { }
 
   filterContacts() {
@@ -28,8 +29,10 @@ export class ListComponent {
   }
 
   ngOnInit() {
-    this.getContacts();
-    this.service.getCategories().subscribe(data => this.categories = data);
+    this.route.url.subscribe(() => {
+      this.getContacts();
+      this.service.getCategories().subscribe(data => this.categories = data);
+    });
   }
 
   getContacts() {
