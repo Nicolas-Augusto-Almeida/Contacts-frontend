@@ -13,6 +13,10 @@ export class ContactsService {
 
   constructor(private http: HttpClient) { }
 
+  getCategories(): Observable<string[]> {
+  return this.http.get<string[]>('http://localhost:8080/categories');
+}
+
   getContacts(): Observable<Contact[]> {
     return this.http.get<Contact[]>(this.apiUrl);
   }

@@ -54,11 +54,11 @@ ngOnInit(): void {
 
   if (contact.id) {
     this.service.updateContact(contact).subscribe(() => {
-      this.router.navigate(['/contatos']);
+      this.router.navigate(['/List']);
     });
   } else {
     this.service.saveContact(contact).subscribe(() => {
-      this.router.navigate(['/contatos']);
+      this.router.navigate(['/List']);
     });
   }
 }

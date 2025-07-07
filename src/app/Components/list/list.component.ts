@@ -11,40 +11,42 @@ import { ContactsService } from '../../Services/contacts.service';
 })
 export class ListComponent {
   contacts: Contact[] = [];
-  formGroupContact: FormGroup;
+  categories: string[] = [];
+  filteredContacts: Contact[] = [];
+  selectedCategory: string = '';
+  searchTerm: string = '';
 
-  constructor(private service: ContactsService,
-    private formBuilder: FormBuilder
-  ){
-    this.formGroupContact = this.formBuilder.group({
-      id: [null],
-      name: [''],
-      email: [''],
-      phone: [''],
-      address: [''],
-      birthday: [''],
-      company: [''],
-      title: [''],
-      favorite: [false],
-      category: ['']
-    });
+  constructor(private service: ContactsService
+  ) { }
+
+  filterContacts() {
+    const term = this.searchTerm.toLowerCase();
+    this.filteredContacts = this.contacts.filter(contact =>
+      (!this.selectedCategory || String(contact.category) === this.selectedCategory) &&
+      (contact.name.toLowerCase().includes(term))
+    );
   }
 
   ngOnInit() {
     this.getContacts();
+    this.service.getCategories().subscribe(data => this.categories = data);
   }
 
-  getContacts(){
+  getContacts() {
     this.service.getContacts().subscribe({
-      next: json => this.contacts = json
+      next: json => {
+        this.contacts = json;
+        this.filterContacts();
+      }
     });
+
   }
 
-  delete(contact: Contact){
+  delete(contact: Contact) {
     this.service.deleteContact(contact).subscribe({
       next: () => this.getContacts(),
     })
   }
 
-  
+
 }

@@ -10,7 +10,7 @@ import { provideHttpClient } from '@angular/common/http';
 import { ContactsComponent } from './Components/contacts/contacts.component';
 import { ListComponent } from './Components/list/list.component';
 import { ReactiveFormsModule } from '@angular/forms';
-
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -24,7 +24,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     BrowserModule,
     AppRoutingModule,
     NgbModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [
     provideHttpClient()

@@ -6,7 +6,7 @@
 </div>
 <div class="container-md border rounded p-5 shadow-sm bg-white">
     <div class="row mb-4">
-        <div class="col d-flex justify-content-end"> 
+        <div class="col d-flex justify-content-end">
             <button class="btn btn-success btn-lg" [routerLink]="['/newContact']">Novo Contato</button>
         </div>
 
@@ -15,25 +15,25 @@
         <div class="col">
             <div class="d-flex align-items-center">
                 <img src="search.svg" alt="Search" width="32" height="32" class="me-2">
-                <input type="text" class="form-control" placeholder="Pesquisar contatos...">
+                <input type="text" class="form-control" [(ngModel)]="searchTerm" (input)="filterContacts()"
+                    placeholder="Pesquisar contatos...">
                 <img src="funnel-fill.svg" alt="Search" width="32" height="32" class="ms-2 me-2">
-                <select class="form-select" aria-label="Default select example">
-                    <option selected>Categorias</option>
-                    <option value="1">PROFISSIONAL</option>
-                    <option value="2">FAMILIAR</option>
-                    <option value="3">EMERGENCIA</option>
-                    <option value="4">ESCOLA</option>
-                    <option value="5">AMIGO</option>
-                    <option value="6">OUTROS</option>
+                <select class="form-select" [(ngModel)]="selectedCategory" (change)="filterContacts()">
+                    <option value="">Sem filtro</option>
+                    <option *ngFor="let category of categories" [value]="category">{{ category }}</option>
                 </select>
             </div>
         </div>
     </div>
     <div class="row">
-        <div class="col-md-4 mb-4" *ngFor="let contact of contacts">
+        <div class="col-md-4 mb-4" *ngFor="let contact of filteredContacts">
             <div class="card shadow-sm rounded-4 h-100">
                 <div class="card-body">
-                    <h5 class="card-title">{{ contact.name }}</h5>
+                    <h5 class="card-title" *ngIf="!contact.favorite">{{ contact.name }} </h5>
+                    <h5 class="card-title" *ngIf="contact.favorite">
+                        <img src="star-fill.svg" alt="" width="20" height="20" class="me-2">
+                        {{ contact.name }}
+                    </h5>
                     <h6 class="card-subtitle text-muted mb-2">{{ contact.email }}</h6>
                     <p class="card-text">
                         <strong>Telefone:</strong> {{ contact.phone }}<br />
