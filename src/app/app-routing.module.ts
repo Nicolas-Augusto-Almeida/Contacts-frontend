@@ -4,9 +4,10 @@ import { ContactsComponent } from './Components/contacts/contacts.component';
 import { ListComponent } from './Components/list/list.component';
 
 const routes: Routes = [
-  { path: 'contacts', component: ListComponent },
+  { path: 'List', component: ListComponent },
   { path: '', component: ListComponent },
   { path: 'newContact', component: ContactsComponent },
+  { path: 'Contacts/:id', component: ContactsComponent }
 ];
 
 @NgModule({

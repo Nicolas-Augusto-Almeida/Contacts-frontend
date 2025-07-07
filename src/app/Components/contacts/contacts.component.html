@@ -9,7 +9,7 @@
                 <div class="col">
                     <div class="d-flex align-items-center mb-1">
                         <img src="person-circle.svg" alt="" width="32" height="32" class="me-2">
-                        <input formControlName="name" type="text" class="form-control" id="inputName" placeholder="Nome">
+                        <input formControlName="name" type="text" class="form-control" id="inputName" placeholder="Nome" required="true">
                     </div>
                     <small class="text-danger ms-5">*Obrigatório</small>
                 </div>
@@ -25,7 +25,7 @@
                 <div class="col">
                     <div class="d-flex align-items-center">
                         <img src="phone-fill.svg" alt="" width="32" height="32" class="me-2">
-                        <input formControlName="phone" type="text" class="form-control" id="inputPhone" placeholder="Telefone">
+                        <input formControlName="phone" type="text" class="form-control" id="inputPhone" placeholder="Telefone" required="true">
                     </div>
                     <small class="text-danger ms-5">*Obrigatório</small>
                 </div>
@@ -60,7 +60,7 @@
                 <div class="col">
                     <div class="d-flex align-items-center">
                         <img src="tags-fill.svg" alt="" width="32" height="32" class="me-2">
-                        <select formControlName="category" class="form-select" aria-label="Default select example">
+                        <select formControlName="category" class="form-select" aria-label="Default select example" required="true">
                             <option selected>Categorias</option>
                             <option value="PROFISSIONAL">PROFISSIONAL</option>
                             <option value="FAMILIAR">FAMILIAR</option>
@@ -87,7 +87,7 @@
             <div class="row align-items-start mb-4">
                 <div class="col-6">
                     <div class="d-flex align-items-center">
-                        <button type="submit" class="btn btn-primary me-2" routerLink="/contacts" (click)="save()">Salvar</button>
+                        <button type="submit" class="btn btn-primary me-2" [disabled]="formGroupContact.invalid" routerLink="/List" (click)="save()">Salvar</button>
                         <button type="reset" class="btn btn-secondary me-2" (click)="clear()">Limpar</button>
                     </div>
                 </div>

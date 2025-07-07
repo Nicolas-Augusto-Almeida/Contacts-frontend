@@ -6,6 +6,12 @@
 </div>
 <div class="container-md border rounded p-5 shadow-sm bg-white">
     <div class="row mb-4">
+        <div class="col d-flex justify-content-end"> 
+            <button class="btn btn-success btn-lg" [routerLink]="['/newContact']">Novo Contato</button>
+        </div>
+
+    </div>
+    <div class="row mb-4">
         <div class="col">
             <div class="d-flex align-items-center">
                 <img src="search.svg" alt="Search" width="32" height="32" class="me-2">
@@ -39,7 +45,8 @@
                         'dd/MM/yyyy') : '-' }}<br />
                         <strong>Cargo:</strong> {{ contact.title || '-' }}<br />
                         <button class="btn btn-danger mt-2" (click)="delete(contact)">Excluir</button>
-                        <button class="btn btn-secondary mt-2 ms-2" routerLink="/newContact">Editar</button>
+                        <button class="btn btn-secondary mt-2 ms-2"
+                            [routerLink]="['/Contacts', contact.id]">Editar</button>
                     </p>
                 </div>
             </div>

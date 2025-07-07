@@ -17,7 +17,7 @@ export class ListComponent {
     private formBuilder: FormBuilder
   ){
     this.formGroupContact = this.formBuilder.group({
-      id: [''],
+      id: [null],
       name: [''],
       email: [''],
       phone: [''],

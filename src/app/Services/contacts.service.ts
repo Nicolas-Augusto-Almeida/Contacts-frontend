@@ -7,24 +7,26 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class ContactsService {
-  save(value: any) {
-    throw new Error('Method not implemented.');
-  }
+
 
   apiUrl = 'http://localhost:8080/contacts';
 
   constructor(private http: HttpClient) { }
 
-  getContacts() : Observable<Contact[]> {
+  getContacts(): Observable<Contact[]> {
     return this.http.get<Contact[]>(this.apiUrl);
   }
-  
+
+  getContactById(id: number): Observable<Contact> {
+    return this.http.get<Contact>(`${this.apiUrl}/${id}`);
+  }
+
   saveContact(contact: Contact): Observable<Contact> {
     return this.http.post<Contact>(this.apiUrl, contact);
   }
 
-  updateContact(id: number, contact: any) {
-    return this.http.put(`${this.apiUrl}/${id}`, contact);
+  updateContact(contact: Contact) : Observable<Contact> {
+    return this.http.put<Contact>(`${this.apiUrl}/${contact.id}`, contact);
   }
 
   deleteContact(contact: Contact): Observable<void> {
