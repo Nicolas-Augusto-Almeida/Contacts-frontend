@@ -1,7 +1,7 @@
 <div class="container-fluid text-muted text-center p-4">
     <div class="d-flex align-items-center justify-content-center">
-        <h1>Contatos</h1>
-        <img src="person-circle.svg" alt="Bootstrap" width="40" height="40" class="ms-2">
+        <h1>Contatos Favoritos</h1>
+        <img src="star-fill.svg" alt="Bootstrap" width="40" height="40" class="ms-2">
     </div>
 </div>
 <div class="container-md border rounded p-5 shadow-sm bg-white">
@@ -27,16 +27,15 @@
     </div>
     <div class="row">
         <div class="col-md-4 mb-4" *ngFor="let contact of filteredContacts">
-            <div class="card shadow-sm rounded-4 h-100">
-                <div class="card-body d-flex flex-column justify-content-between">
-                    <h5 class="card-title" *ngIf="!contact.favorite">{{ contact.name }} </h5>
-                    <h5 class="card-title d-flex align-items-center" *ngIf="contact.favorite">
+            <div class="card shadow-sm rounded-4 h-100" *ngIf="contact.favorite">
+                <div class="card-body" >
+                    <h5 class="card-title d-flex align-items-center">
                         <img src="star-fill.svg" alt="" width="20" height="20" class="me-2">
                         {{ contact.name }}
                     </h5>
                     <h6 class="card-subtitle text-muted mb-2">{{ contact.email }}</h6>
                     <p class="card-text">
-                        <strong>Telefone:</strong> {{ contact.phone }}<br />
+                        <strong >Telefone:</strong> {{ contact.phone }}<br />
                         <strong>Endereço:</strong> {{ contact.address || '-' }}<br />
                         <strong>Empresa:</strong> {{ contact.company || '-' }}<br />
                         <strong>Categoria:</strong> {{ contact.category || '-' }}<br />
@@ -44,11 +43,10 @@
                         <strong>Data de Nascimento:</strong> {{ contact.birthday ? (contact.birthday | date:
                         'dd/MM/yyyy') : '-' }}<br />
                         <strong>Cargo:</strong> {{ contact.title || '-' }}<br />
-                    </p>
-                    <div>
                         <button class="btn btn-danger mt-2" (click)="delete(contact)">Excluir</button>
-                        <button class="btn btn-secondary mt-2 ms-2" [routerLink]="['/Contacts', contact.id]">Editar</button>
-                    </div>
+                        <button class="btn btn-secondary mt-2 ms-2"
+                            [routerLink]="['/Contacts', contact.id]">Editar</button>
+                    </p>
                 </div>
             </div>
         </div>

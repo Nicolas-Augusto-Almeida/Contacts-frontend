@@ -11,6 +11,7 @@ import { ContactsComponent } from './Components/contacts/contacts.component';
 import { ListComponent } from './Components/list/list.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FormsModule } from '@angular/forms';
+import { FavoritesComponent } from './Components/favorites/favorites.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { FormsModule } from '@angular/forms';
     NavbarComponent,
     ContactsComponent,
     ListComponent,
+    FavoritesComponent,
   ],
   imports: [
     BrowserModule,
